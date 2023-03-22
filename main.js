@@ -1,4 +1,4 @@
-import "./style.css";
+import "/style.css";
 import axios from "axios";
 
 const date = document.getElementById("dateInput");
