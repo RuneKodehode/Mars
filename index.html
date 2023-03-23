@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-0600d3b4.js"></script>
+    <link rel="stylesheet" href="/assets/index-ce0938d1.css">
+  </head>
+  <body
+    class="bg-black text-white h-screen w-screen bg-contain bg-no-repeat bg-center"
+  >
+    <div id="navBar" class="p-2 text-center text-2xl bg-red-700 bg-opacity-60">
+      Daily Mars
+    </div>
+
+    <div class="flex flex-row sm:flex-row">
+      <input
+        id="dateInputOne"
+        type="number"
+        class="w-48 rounded-lg p-1 border-2 mx-auto my-2 text-center bg-opacity-80 text-black hover:border-orange-600"
+        placeholder="YYYY"
+      />
+      <input
+        id="dateInputTwo"
+        type="number"
+        class="w-48 rounded-lg p-1 border-2 mx-auto my-2 text-center bg-opacity-80 text-black hover:border-orange-600"
+        placeholder="MM"
+      />
+      <input
+        id="dateInputThree"
+        type="number"
+        class="w-48 rounded-lg p-1 border-2 mx-auto my-2 text-center bg-white bg-opacity-80 text-black hover:border-orange-600"
+        placeholder="DD"
+      />
+      <button
+        id="submitBtn"
+        class="w-16 h-12 border-2 rounded-lg border-orange-600 active:scale-90 mx-auto my-2 bg-orange-600 bg-opacity-90 text-white hover:border-black"
+      >
+        Click me
+      </button>
+    </div>
+    <div class="h-screen flex justify-evenly">
+      <button
+        id="prev"
+        class="border-2 border-orange-600 w-32 bg-transparent active:scale-95 rounded"
+      >
+        prev
+      </button>
+      <img
+        id="picture"
+        class="w-full justify-self-center bg-[url('/navcam.jpg')] bg-no-repeat bg-center rounded border-none"
+      />
+      <button
+        id="next"
+        class="border-2 border-orange-600 w-32 bg-transparent active:scale-95 rounded"
+      >
+        next
+      </button>
+    </div>
+
+    
+  </body>
+</html>
