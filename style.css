@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 99vw;
-  background: rgba(255, 68, 0, 0.145);
+  background: rgba(255, 68, 0, 0.11);
 }
 
 #image-container img {
