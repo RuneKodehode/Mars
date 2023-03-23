@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-cecdb80c.js"></script>
+    <script type="module" crossorigin src="/assets/index-9c808697.js"></script>
     <link rel="stylesheet" href="/assets/index-9fb7d10e.css">
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
@@ -15,12 +15,16 @@
       <div
         class="flex justify-center py-2 text-xl bg-opacity-10 rounded-lg mx-auto gap-4"
       >
-        <label for="date-input" class="sm:text-xl text-sm">Enter a date:</label>
+        <label id="dateEnter" for="date-input" class="sm:text-xl text-sm"
+          >Enter a date:</label
+        >
+
         <input
           type="date"
           id="date-input"
           class="text-xl bg-orange-400 rounded-md"
         />
+        <p id="counter" class=""></p>
       </div>
     </div>
     <div id="image-container" class="w-full"></div>
