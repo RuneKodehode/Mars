@@ -1,56 +1,24 @@
-import "/style.css";
-import axios from "axios";
+import "./style.css";
 
-const date = document.getElementById("dateInput");
-const dateInputOne = document.getElementById("dateInputOne");
-const dateInputTwo = document.getElementById("dateInputTwo");
-const dateInputThree = document.getElementById("dateInputThree");
-const submitBtn = document.getElementById("submitBtn");
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
-const pic = document.getElementById("picture");
-let imageNumber = 0;
-let imageCounter = 0;
-function setInputDate() {
-  let dato =
-    dateInputOne.value + "-" + dateInputTwo.value + "-" + dateInputThree.value;
-  console.log(dato);
-  axios
-    .get(
-      "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" +
-        dato +
-        "&camera=navcam&api_key=nbOcqt4gNqe7vaqXhEVlZ2Xu4rHfu2IK68Xdvgov"
-    )
-    .then((response) => {
-      let imgUrl = response.data.photos[imageNumber].img_src;
-      pic.src = imgUrl;
+const dateInput = document.getElementById("date-input");
 
-      imageCounter = response.data.photos.length;
-      document.getElementById("navBar").innerHTML =
-        imageNumber + 1 + "/" + imageCounter;
+dateInput.addEventListener("change", async (event) => {
+  const date = event.target.value;
+  const apiEndpoint = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=nbOcqt4gNqe7vaqXhEVlZ2Xu4rHfu2IK68Xdvgov`;
 
-      //   return (imageCounter = response.data.photos.length);
-    })
+  const response = await fetch(apiEndpoint);
+  const data = await response.json();
+  const imageUrls = data.photos.map((photo) => photo.img_src);
 
-    .catch((error) => {
-      console.log(error);
+  const imageContainer = document.getElementById("image-container");
+  imageContainer.innerHTML = "";
+
+  imageUrls.forEach((url) => {
+    const img = document.createElement("img");
+    img.src = url;
+    img.addEventListener("click", () => {
+      img.classList.toggle("expanded");
     });
-}
-
-submitBtn.addEventListener("click", function () {
-  imageNumber = 0;
-
-  setInputDate();
-  console.log(imageCounter);
-});
-
-next.addEventListener("click", function () {
-  imageNumber === imageCounter ? null : imageNumber++;
-  setInputDate();
-  console.log(imageNumber);
-});
-prev.addEventListener("click", function () {
-  imageNumber === 0 ? null : imageNumber--;
-  setInputDate();
-  console.log(imageNumber);
+    imageContainer.appendChild(img);
+  });
 });
