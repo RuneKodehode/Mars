@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-9c808697.js"></script>
-    <link rel="stylesheet" href="/assets/index-9fb7d10e.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap");
+    </style>
+    <script type="module" crossorigin src="/assets/index-ae4def35.js"></script>
+    <link rel="stylesheet" href="/assets/index-cce08853.css">
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
     <div
-      class="bg-orange-600 text-xl border-b-4 border-orange-600 bg-opacity-25"
+      class="flex flex-row justify-between text-xl border-b-4 border-orange-600 bg-black bg-opacity-40 text-white"
     >
-      <h1 class="text-center sm:text-4xl sm:p-2">Curiosity Rover Images</h1>
-      <div
-        class="flex justify-center py-2 text-xl bg-opacity-10 rounded-lg mx-auto gap-4"
-      >
+      <img
+        src="/assets/NASA_logo.svg-6a550bca.png"
+        alt=""
+        class="sm:h-[100px] h-[50px]"
+      />
+
+      <h1 class="text-center sm:text-6xl my-auto">Curiosity Rover</h1>
+      <div class="flex my-auto gap-3">
         <label id="dateEnter" for="date-input" class="sm:text-xl text-sm"
           >Enter a date:</label
         >
@@ -22,12 +29,17 @@
         <input
           type="date"
           id="date-input"
-          class="text-xl bg-orange-400 rounded-md"
+          class="text-xl bg-transparent rounded-md"
         />
-        <p id="counter" class=""></p>
       </div>
+      <p id="counter" class="text-sm p-2 sm:text-4xl my-auto"></p>
     </div>
-    <div id="image-container" class="w-full"></div>
+    <div id="image-container" class="w-full flex flex-wrap bg-opacity-30"></div>
+    <iframe
+      src="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW"
+      frameborder="0"
+      class="fixed bottom-0 right-0 hover:w-4/6 hover:h-4/6 rounded-lg m-2"
+    ></iframe>
     
   </body>
 </html>
