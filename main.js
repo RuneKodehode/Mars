@@ -9,9 +9,12 @@ dateInput.addEventListener("change", async (event) => {
   const response = await fetch(apiEndpoint);
   const data = await response.json();
   const imageUrls = data.photos.map((photo) => photo.img_src);
+  document.getElementById(
+    "sol"
+  ).textContent = `Martian Sol: ${data.photos[0].sol}`;
 
   const imageContainer = document.getElementById("image-container");
-  // imageContainer.innerHTML = "";
+  imageContainer.innerHTML = "";
 
   imageUrls.forEach((url) => {
     const img = document.createElement("img");
