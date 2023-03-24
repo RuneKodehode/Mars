@@ -11,7 +11,7 @@ dateInput.addEventListener("change", async (event) => {
   const imageUrls = data.photos.map((photo) => photo.img_src);
 
   const imageContainer = document.getElementById("image-container");
-  imageContainer.innerHTML = "";
+  // imageContainer.innerHTML = "";
 
   imageUrls.forEach((url) => {
     const img = document.createElement("img");
