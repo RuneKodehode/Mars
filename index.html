@@ -7,20 +7,21 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap");
     </style>
-    <script type="module" crossorigin src="/assets/index-b157701e.js"></script>
-    <link rel="stylesheet" href="/assets/index-d21d1b2c.css">
+    <script type="module" crossorigin src="/assets/index-0be84401.js"></script>
+    <link rel="stylesheet" href="/assets/index-92a971fd.css">
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
     <div
       class="flex flex-row justify-between text-xl border-b-4 border-orange-600 bg-black bg-opacity-40 text-white"
     >
-      <img
-        src="/assets/NASA_logo.svg-6a550bca.png"
-        alt=""
-        class="sm:h-[100px] h-[50px]"
-      />
+      <a href="https://mars.nasa.gov/msl/home/">
+        <img
+          src="/assets/NASA_logo.svg-6a550bca.png"
+          alt=""
+          class="sm:h-[100px] h-[50px]"
+      /></a>
 
-      <h1 class="text-center sm:text-6xl my-auto">Curiosity Rover</h1>
+      <h1 class="text-center sm:text-6xl my-auto">Mars Curiosity Rover</h1>
       <div class="flex my-auto gap-3">
         <label id="dateEnter" for="date-input" class="sm:text-xl text-sm"
           >Enter a date:</label
@@ -40,7 +41,13 @@
     <iframe
       src="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW"
       frameborder="0"
-      class="fixed bottom-0 right-0 hover:w-4/6 hover:h-4/6 rounded-lg m-2"
+      class="fixed bottom-0 right-0 hover:w-9/12 hover:h-2/3 rounded-lg z-1"
+    ></iframe>
+    <iframe
+      src="https://mars.nasa.gov/layout/embed/image/mslweather/"
+      scrolling="no"
+      frameborder="0"
+      class="fixed bottom-0 left-0 hover:w-[900px] hover:h-[600px] rounded-lg z-1"
     ></iframe>
     
   </body>
