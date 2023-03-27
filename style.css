@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+html {
   font-family: "oswald";
   overflow-x: hidden;
 }
+
 #image-container img {
   max-width: 18%;
   max-height: 18%;
