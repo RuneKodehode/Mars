@@ -7,8 +7,8 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap");
     </style>
-    <script type="module" crossorigin src="/assets/index-312273d7.js"></script>
-    <link rel="stylesheet" href="/assets/index-a438c393.css">
+    <script type="module" crossorigin src="/assets/index-a73610b3.js"></script>
+    <link rel="stylesheet" href="/assets/index-78970d16.css">
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
     <div
@@ -33,12 +33,6 @@
         </div>
       </div>
       <div class="flex flex-row sm:gap-4">
-        <button
-          id="magnify"
-          class="my-auto w-auto p-2 h-auto text-4xl bg-orange-600 z-20"
-        >
-          Magnify
-        </button>
         <label
           id="dateEnter"
           for="date-input"
@@ -62,7 +56,11 @@
           class="text-sm p-2 sm:text-2xl my-auto text-orange-600"
         ></p>
       </div>
-      <div class="flex my-auto gap-3"></div>
+      <div class="flex my-auto gap-3">
+        <button id="magnify" class="h-auto text-4xl bg-orange-600 z-20">
+          Magnify
+        </button>
+      </div>
     </div>
     <div id="image-container" class="w-full flex flex-wrap bg-opacity-30"></div>
     <iframe
@@ -70,12 +68,14 @@
       frameborder="0"
       class="fixed bottom-0 right-0 hover:w-9/12 hover:h-2/3 rounded-lg z-1"
     ></iframe>
+
     <iframe
       src="https://mars.nasa.gov/layout/embed/image/mslweather/"
       scrolling="no"
       frameborder="0"
-      class="fixed bottom-0 left-0 hover:w-[900px] hover:h-[600px] rounded-lg z-1"
+      class="fixed flex flex-row bottom-0 left-0 hover:w-[900px] hover:h-[600px] rounded-lg z-1"
     ></iframe>
+
     
   </body>
 </html>
