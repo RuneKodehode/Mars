@@ -28,3 +28,67 @@ dateInput.addEventListener("change", async (event) => {
     imageContainer.appendChild(img);
   });
 });
+
+// ----------------------------------------
+
+const SCALE = 2;
+const SIZE = 300;
+const LENSE_OFFSET_X = SIZE / 6;
+const LENSE_OFFSET_Y = SIZE / 5;
+
+document.documentElement.style.setProperty("--scale", SCALE);
+document.documentElement.style.setProperty("--size", SIZE + "px");
+
+const handle = document.createElement("div");
+handle.classList.add("handle");
+
+const magnifyingGlass = document.createElement("div");
+magnifyingGlass.classList.add("magnifying-glass");
+magnifyingGlass.style.top = LENSE_OFFSET_Y + "px";
+magnifyingGlass.style.left = LENSE_OFFSET_X + "px";
+
+handle.append(magnifyingGlass);
+
+const magnifyButton = document.getElementById("magnify");
+let on = false;
+const addMagnifyingGlass = () => {
+  if (on == false) {
+    let bodyClone = document.body.cloneNode(true);
+    bodyClone.classList.add("body-clone");
+    bodyClone.style.top = "0px";
+    bodyClone.style.left = "0px";
+    magnifyingGlass.append(bodyClone);
+    document.body.append(handle);
+    on = true;
+  } else if (on == true) {
+    magnifyingGlass.children[0].remove();
+    handle.remove();
+    on = false;
+  }
+};
+
+magnifyButton.addEventListener("click", addMagnifyingGlass);
+
+const moveMagnifyingGlass = (event) => {
+  let pointerX = event.pageX;
+  let pointerY = event.pageY;
+
+  handle.style.left = pointerX - SIZE / 5 + "px";
+  handle.style.top = pointerY - SIZE / 1.7 + "px";
+  if (magnifyingGlass.children[0]) {
+    let offsetX = (SIZE * Math.pow(SCALE, 2)) / 2 - pointerX * SCALE;
+    let offsetY = (SIZE * Math.pow(SCALE, 2)) / 2 - pointerY * SCALE;
+    magnifyingGlass.children[0].style.left = offsetX + "px";
+    magnifyingGlass.children[0].style.top = offsetY + "px";
+  }
+};
+
+document.addEventListener("pointermove", moveMagnifyingGlass);
+
+const removeMagnifiyingGlass = (event) => {
+  magnifyingGlass.children[0].remove();
+  handle.remove();
+  on = false;
+};
+
+magnifyingGlass.addEventListener("dblclick", removeMagnifiyingGlass);
