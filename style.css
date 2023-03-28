@@ -44,7 +44,7 @@ html {
 
 .handle {
   position: absolute;
-  height: calc(var(--size) * 1.9);
+  /* height: calc(var(--size) * 1.9); */
   width: calc(var(--size) * 1.9);
   background: var(--handle-background);
 }
@@ -59,20 +59,6 @@ html {
   overflow: hidden;
 }
 
-.magnifying-glass::after {
-  display: block;
-  position: relative;
-  top: calc(2 * var(--size) / 3);
-  left: calc(2 * var(--size) / 3);
-  height: 15px;
-  width: 30px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 10;
-  transform: rotate(-45deg);
-  opacity: 70%;
-}
-
 .body-clone {
   position: absolute;
   margin-left: 8vw;
@@ -80,6 +66,7 @@ html {
   height: 100vh;
   width: calc(100vw);
   transform: scale(var(--scale));
+  overflow: hidden;
 }
 /* ------------------------------- */
 @media screen and (max-width: 600px) {

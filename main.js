@@ -31,10 +31,10 @@ dateInput.addEventListener("change", async (event) => {
 
 // ----------------------------------------
 
-const SCALE = 2;
+const SCALE = 3;
 const SIZE = 300;
-const LENSE_OFFSET_X = SIZE / 6;
-const LENSE_OFFSET_Y = SIZE / 5;
+const LENSE_OFFSET_X = SIZE / 7;
+const LENSE_OFFSET_Y = SIZE / 7;
 
 document.documentElement.style.setProperty("--scale", SCALE);
 document.documentElement.style.setProperty("--size", SIZE + "px");
@@ -73,16 +73,20 @@ const moveMagnifyingGlass = (event) => {
   let pointerX = event.pageX;
   let pointerY = event.pageY;
 
-  handle.style.left = pointerX - SIZE / 5 + "px";
-  handle.style.top = pointerY - SIZE / 1.7 + "px";
+  // Calculate the position of the magnifying glass relative to the mouse
+  let glassX = pointerX - LENSE_OFFSET_X;
+  let glassY = pointerY - LENSE_OFFSET_Y;
+
+  handle.style.left = pointerX - SIZE / 1.8 + "px";
+  handle.style.top = pointerY - SIZE / 1 + "px";
   if (magnifyingGlass.children[0]) {
-    let offsetX = (SIZE * Math.pow(SCALE, 2)) / 2 - pointerX * SCALE;
-    let offsetY = (SIZE * Math.pow(SCALE, 2)) / 2 - pointerY * SCALE;
+    // Calculate the offset based on the position of the mouse relative to the magnifying glass
+    let offsetX = (SIZE * Math.pow(SCALE, 2)) / 1.5 - glassX * SCALE;
+    let offsetY = (SIZE * Math.pow(SCALE, 2)) / 2 - glassY * SCALE;
     magnifyingGlass.children[0].style.left = offsetX + "px";
     magnifyingGlass.children[0].style.top = offsetY + "px";
   }
 };
-
 document.addEventListener("pointermove", moveMagnifyingGlass);
 
 const removeMagnifiyingGlass = (event) => {
