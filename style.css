@@ -15,6 +15,7 @@ body {
   transform: translate(-50%, -50%);
   height: 85vh;
 }
+
 #image-container img {
   max-width: 18%;
   object-fit: cover;
@@ -84,7 +85,10 @@ body {
   #image-container img:hover {
     transform: scale(1.1);
   }
-
+  #dateEnter {
+    visibility: collapse;
+    width: 0;
+  }
   #image-container img {
     max-width: 30%;
     margin: 10px auto 10px auto;
