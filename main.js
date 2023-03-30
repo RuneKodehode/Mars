@@ -32,9 +32,9 @@ dateInput.addEventListener("change", async (event) => {
 // ----------------------------------------
 
 const SCALE = 3;
-const SIZE = 300;
-const LENSE_OFFSET_X = SIZE / 7;
-const LENSE_OFFSET_Y = SIZE / 7;
+const SIZE = 260;
+const LENSE_OFFSET_X = SIZE / 2.5;
+const LENSE_OFFSET_Y = SIZE / 5;
 
 document.documentElement.style.setProperty("--scale", SCALE);
 document.documentElement.style.setProperty("--size", SIZE + "px");
@@ -55,10 +55,13 @@ const addMagnifyingGlass = () => {
   if (on == false) {
     let bodyClone = document.body.cloneNode(true);
     bodyClone.classList.add("body-clone");
-    bodyClone.style.top = "0px";
-    bodyClone.style.left = "0px";
+    bodyClone.style.top = "0";
+    bodyClone.style.left = "0";
     magnifyingGlass.append(bodyClone);
     document.body.append(handle);
+    let frame = document.getElementById("iframe");
+    frame.style = "visibility:hidden";
+    console.log(frame);
     on = true;
   } else if (on == true) {
     magnifyingGlass.children[0].remove();
@@ -77,7 +80,7 @@ const moveMagnifyingGlass = (event) => {
   let glassX = pointerX - LENSE_OFFSET_X;
   let glassY = pointerY - LENSE_OFFSET_Y;
 
-  handle.style.left = pointerX - SIZE / 1.8 + "px";
+  handle.style.left = pointerX - SIZE / 2 + "px";
   handle.style.top = pointerY - SIZE / 1 + "px";
   if (magnifyingGlass.children[0]) {
     // Calculate the offset based on the position of the mouse relative to the magnifying glass
@@ -96,3 +99,32 @@ const removeMagnifiyingGlass = (event) => {
 };
 
 magnifyingGlass.addEventListener("dblclick", removeMagnifiyingGlass);
+
+const weatherButton = document.getElementById("weather");
+
+weatherButton.addEventListener("click", toggleWeather);
+const iframe = document.getElementById("frame");
+
+const gps = document.getElementById("gps");
+
+function toggleWeather() {
+  iframe.src = "https://mars.nasa.gov/layout/embed/image/mslweather/";
+  if (document.getElementById("frame").style.visibility == "visible") {
+    document.getElementById("frame").style.visibility = "hidden";
+  } else {
+    iframe.src === "";
+
+    document.getElementById("frame").style.visibility = "visible";
+  }
+}
+
+gps.addEventListener("click", toggleGps);
+
+function toggleGps() {
+  iframe.src = "https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW ";
+  if (document.getElementById("frame").style.visibility == "visible") {
+    document.getElementById("frame").style.visibility = "hidden";
+  } else {
+    document.getElementById("frame").style.visibility = "visible";
+  }
+}

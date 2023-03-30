@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-body,
-html {
+body {
   font-family: "oswald";
-  overflow-x: hidden;
+  width: screen;
 }
-
+#frame {
+  height: 88%;
+  visibility: hidden;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 85vh;
+}
 #image-container img {
   max-width: 18%;
-  max-height: 18%;
   object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   margin: 10px auto 10px auto;
   border-radius: 10px;
   cursor: -moz-zoom-in;
@@ -22,7 +27,7 @@ html {
 }
 
 #image-container img:hover {
-  transform: scale(1.2);
+  transform: scale(1.03);
 }
 
 #image-container img.expanded {
@@ -43,38 +48,41 @@ html {
 /* ---------------------------- */
 
 .handle {
-  position: absolute;
-  /* height: calc(var(--size) * 1.9); */
-  width: calc(var(--size) * 1.9);
+  position: fixed;
   background: var(--handle-background);
 }
 
 .magnifying-glass {
   border-radius: 50%;
   position: absolute;
-  padding: 0;
-  margin: 0;
   height: var(--size);
   width: var(--size);
   overflow: hidden;
+  border: 1px solid black;
+  box-shadow: 0px 0px 20px black;
 }
 
 .body-clone {
   position: absolute;
-  margin-left: 8vw;
   padding: inherit;
   height: 100vh;
   width: calc(100vw);
   transform: scale(var(--scale));
   overflow: hidden;
+  cursor: none;
+}
+#location {
+  visibility: hidden;
+}
+#nasaWeather {
+  visibility: hidden;
+  margin-left: auto;
+  scale: 1.5;
 }
 /* ------------------------------- */
 @media screen and (max-width: 600px) {
   #image-container img:hover {
     transform: scale(1.1);
-  }
-  iframe {
-    visibility: hidden;
   }
 
   #image-container img {
