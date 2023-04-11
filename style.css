@@ -67,9 +67,9 @@ body {
 
 .body-clone {
   position: absolute;
-  padding: inherit;
-  height: 100vh;
-  width: calc(100vw);
+
+  height: 100dvh;
+  width: 100dvw;
   transform: scale(var(--scale));
   overflow: hidden;
   cursor: none;

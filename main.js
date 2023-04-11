@@ -30,9 +30,8 @@ dateInput.addEventListener("change", async (event) => {
 });
 
 // ----------------------------------------
-
 const SCALE = 3;
-const SIZE = 260;
+const SIZE = Math.min(window.innerWidth, window.innerHeight) / 4;
 const LENSE_OFFSET_X = SIZE / 2.5;
 const LENSE_OFFSET_Y = SIZE / 5;
 
@@ -69,7 +68,7 @@ const addMagnifyingGlass = () => {
     on = false;
   }
 };
-
+// I am so fucking tired at the moment.
 magnifyButton.addEventListener("click", addMagnifyingGlass);
 
 const moveMagnifyingGlass = (event) => {
@@ -83,7 +82,6 @@ const moveMagnifyingGlass = (event) => {
   handle.style.left = pointerX - SIZE / 2 + "px";
   handle.style.top = pointerY - SIZE / 1 + "px";
   if (magnifyingGlass.children[0]) {
-    // Calculate the offset based on the position of the mouse relative to the magnifying glass
     let offsetX = (SIZE * Math.pow(SCALE, 2)) / 1.5 - glassX * SCALE;
     let offsetY = (SIZE * Math.pow(SCALE, 2)) / 2 - glassY * SCALE;
     magnifyingGlass.children[0].style.left = offsetX + "px";
@@ -99,6 +97,16 @@ const removeMagnifiyingGlass = (event) => {
 };
 
 magnifyingGlass.addEventListener("dblclick", removeMagnifiyingGlass);
+
+window.addEventListener("resize", () => {
+  const newSize = Math.min(window.innerWidth, window.innerHeight) / 4;
+  const newOffsetX = newSize / 2.5;
+  const newOffsetY = newSize / 5;
+
+  document.documentElement.style.setProperty("--size", newSize + "px");
+  magnifyingGlass.style.top = newOffsetY + "px";
+  magnifyingGlass.style.left = newOffsetX + "px";
+});
 
 const weatherButton = document.getElementById("weather");
 
