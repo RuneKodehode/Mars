@@ -11,14 +11,24 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script type="module" crossorigin src="/assets/index-32598b59.js"></script>
-    <link rel="stylesheet" href="/assets/index-b02e1d68.css">
+    <script type="module" crossorigin src="/assets/index-1fa41540.js"></script>
+    <link rel="stylesheet" href="/assets/index-f0fe609f.css">
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
+    
     <div
-      class="flex flex-row justify-between text-xl text-white border-orange-600 border-2 border-t-transparent border-x-transparent"
+      class="flex flex-row justify-between text-xl text-white bg-opacity-50 bg-black"
     >
       <div class="flex flex-row">
+        <div class="menu flex" tab-index="0">
+          <h1 href="#" class="text-center sm:text-4xl my-auto cursor-pointer">Menu</h1>
+          <ul class="sub-menu">
+            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">4</li>
+            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">3</li>
+            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">2</li>
+            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">1</li>
+          </ul>
+        </div>
         <a href="https://mars.nasa.gov/msl/home/" class="my-auto">
           <img
             src="/NASA_logo.svg.png"
@@ -27,7 +37,7 @@
             class="sm:h-[100px] h-[50px] m-auto"
           />
         </a>
-
+        
         <div class="sm:flex sm:flex-row sm:gap-2">
           <h1 class="text-center sm:text-4xl my-auto">Mars</h1>
           <h3 class="text-center sm:text-4xl my-auto text-orange-400">
@@ -36,14 +46,9 @@
           <h3 class="text-center sm:text-4xl my-auto">Rover</h3>
         </div>
       </div>
+     
       <div class="flex flex-row sm:gap-4">
-        <label
-          id="dateEnter"
-          for="date-input"
-          class="sm:text-2xl text-sm my-auto mr-3"
-        >
-          Enter a <span class="text-blue-800">date:</span>
-        </label>
+       
         <input
           type="date"
           id="date-input"
@@ -58,31 +63,28 @@
           class="text-sm p-2 sm:text-2xl my-auto text-orange-600"
         ></p>
       </div>
-      <div class="flex my-auto gap-3">
-        <button id="gps" class="flex items-center justify-center w-1/2">
+      <div class="flex my-auto gap-6">
+        <button id="gps" class="flex items-center justify-center w-1/6">
           <img src="/nav.svg" alt="" class="w-full h-auto">
         </button>
-        <button id="magnify" class="flex items-center justify-center w-1/2">
+        <button id="magnify" class="flex items-center justify-center w-1/6">
           <img src="/mag.svg" alt="" class="w-full h-auto">
         </button>
-        <button id="weather" class="flex items-center justify-center w-1/2" >
+        <button id="weather" class="flex items-center justify-center w-1/6" >
       <img src="/weather.svg" alt="" class="w-full h-auto">
         </button>
       </div>
     </div>
-    
     <iframe
       src="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW"
       frameborder="0"
       id="frame"
-    
     ></iframe>
     <div
       id="image-container"
       class="w-full h-max flex flex-wrap bg-opacity-30"
-    ></div>
-
-
+    >
+  </div>
     </main>
     
   </body>
