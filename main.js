@@ -19,9 +19,7 @@ dateInput.addEventListener("change", async (event) => {
   imageUrls.forEach((url) => {
     const img = document.createElement("img");
     img.src = url;
-    count++;
-    document.getElementById("dateEnter").textContent = null;
-    document.getElementById("counter").textContent = count + " Images";
+
     img.addEventListener("click", () => {
       img.classList.toggle("expanded");
     });
