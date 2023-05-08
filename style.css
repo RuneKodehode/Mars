@@ -28,8 +28,10 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
+  transform: translateX(-20%);
+  transition: 4s ease-out;
+  z-index: 4;
 }
-
 .menu:focus .sub-menu,
 .menu:focus-within .sub-menu,
 .menu:hover .sub-menu {
@@ -37,6 +39,7 @@ body {
   opacity: 1;
   z-index: 4;
   transform: translateY(0%);
+  transition: 0.3s ease-in-out;
 }
 
 /* end of dropdown menu */
@@ -82,7 +85,6 @@ body {
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
-
 @media screen and (max-width: 600px) {
   #image-container img:hover {
     transform: scale(1.1);
@@ -93,8 +95,9 @@ body {
   }
   #frame {
     top: 50%;
+    left: 48%;
     height: 55vh;
-    width: 97vw;
+    width: 90vw;
   }
   #dateEnter {
     visibility: collapse;
