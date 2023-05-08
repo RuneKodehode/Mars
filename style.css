@@ -6,22 +6,18 @@ body {
   font-family: "oswald";
   width: screen;
 }
+#equipment {
+  visibility: hidden;
+}
+
 /* dropdown menu */
 .menu {
   position: relative;
 }
-.buttonExtension {
+/* .buttonExtension {
   visibility: hidden;
-}
-.div1:hover .buttonExtension {
-  visibility: visible;
-}
-.div2:hover .buttonExtension {
-  visibility: visible;
-}
-.div3:hover .buttonExtension {
-  visibility: visible;
-}
+} */
+
 .sub-menu {
   visibility: hidden;
   opacity: 0;

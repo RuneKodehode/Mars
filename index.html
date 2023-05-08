@@ -13,37 +13,57 @@
     />
   </head>
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
-    
     <div
-      class="flex flex-row justify-between text-xl text-white bg-opacity-70 bg-black"
+      class="flex flex-row justify-between text-xl text-white bg-opacity-80 bg-black"
     >
       <div class="flex flex-row">
         <div class="menu flex" tab-index="0">
-          <h1 href="#" class="text-center my-auto w-full px-4 cursor-pointer"><img src="/dist/borgir.svg"></h1>
+          <h1 href="#" class="text-center my-auto w-full px-4 cursor-pointer">
+            <img src="/dist/borgir.svg" />
+          </h1>
           <ul class="sub-menu">
             <div class="div1 flex">
-            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer border border-black border-opacity-0 hover:border hover:border-white">Equipment</button>
-            <button  class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border border-black border-opacity-0 hover:border hover:border-white">Gear</button>
-            <button id="weather" class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border border-black border-opacity-0 hover:border hover:border-white" >
-              Weather
-                </button>
-          </div>
+              <button
+                id="equipBtn"
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                Equipment
+              </button>
+              <button
+                id="weather"
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                Weather
+              </button>
+            </div>
             <div class="div2 flex">
-            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer border-opacity-0 hover:border hover:border-white">Journey</button>
-            <button id="gps" class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border-opacity-0 hover:border hover:border-white">
-                   GPS
-            </button>
-            <button class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border-opacity-0 hover:border hover:border-white">Sites</button>
-          </div>
-          <div class="div3 flex">
-            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer border-opacity-0 hover:border hover:border-white rounded-b-md">Discoveries</button>
-            <button  class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border-opacity-0 hover:border hover:border-white">surprise</button>
-            <button class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert border-opacity-0 hover:border hover:border-white rounded-br-md">hoho</button>
-          </div>
+              <button
+                id="gps"
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                GPS
+              </button>
+              <button
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                Sites
+              </button>
+            </div>
+            <div class="div3 flex">
+              <button
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                Discoveries
+              </button>
+              <button
+                class="bg-black bg-opacity-80 py-3 w-24 focus:invert border border-black border-opacity-0 hover:border hover:border-white"
+              >
+                surprise
+              </button>
+            </div>
           </ul>
         </div>
-       
-        
+
         <div class="sm:flex sm:flex-row sm:gap-2 pl-4">
           <h1 class="text-center my-auto text-2xl">Mars</h1>
           <h3 class="text-center my-auto text-orange-400 text-4xl">
@@ -52,40 +72,30 @@
           <h3 class="text-center my-auto text-2xl">Rover</h3>
         </div>
       </div>
-     
+
       <div class="flex sm:gap-4 pr-10">
-       
         <input
           type="date"
           id="date-input"
           class="text-xl bg-transparent rounded-md my-auto"
         />
-        <p
-          id="sol"
-          class="hidden sm:block my-auto"
-        ></p>
+        <p id="sol" class="hidden sm:block my-auto"></p>
         <a href="https://mars.nasa.gov/msl/home/" class="my-auto">
-          <img
-            src="/NASA_logo.svg.png"
-            id="myimage"
-        
-            class="sm:h-[80px]"
-          />
+          <img src="/NASA_logo.svg.png" id="myimage" class="sm:h-[80px]" />
         </a>
       </div>
-      
     </div>
     <iframe
       src="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW"
-      
       id="frame"
     ></iframe>
     <div
       id="image-container"
       class="w-full h-max flex flex-wrap bg-opacity-30"
-    >
-  </div>
-    </main>
+    ></div>
+    <div id="equipment">
+      <h1 class="text-center">Equipment showcase</h1>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
