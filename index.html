@@ -15,67 +15,69 @@
   <body class="bg-[url('/rover.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
     
     <div
-      class="flex flex-row justify-between text-xl text-white bg-opacity-50 bg-black"
+      class="flex flex-row justify-between text-xl text-white bg-opacity-70 bg-black"
     >
       <div class="flex flex-row">
         <div class="menu flex" tab-index="0">
-          <h1 href="#" class="text-center sm:text-4xl my-auto cursor-pointer">Menu</h1>
+          <h1 href="#" class="text-center my-auto px-1 cursor-pointer"><img src="/dist/borgir.svg"></h1>
           <ul class="sub-menu">
-            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">4</li>
-            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">3</li>
-            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">2</li>
-            <li class="bg-black bg-opacity-50 text-center py-5 px-10 cursor-pointer">1</li>
+            <div class="div1 flex">
+            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer delay-150">Equipment</button>
+            <button  class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert">surprise</button>
+            <button id="weather" class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert" >
+              Weather
+                </button>
+          </div>
+            <div class="div2 flex">
+            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer delay-150">Journey</button>
+            <button id="gps" class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert">
+                   GPS
+            </button>
+            <button class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert">hoho</button>
+          </div>
+          <div class="div3 flex">
+            <button class="w-32 bg-black bg-opacity-70 py-3 cursor-pointer delay-[200ms]">Discoveries</button>
+            <button  class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert">surprise</button>
+            <button class="buttonExtension bg-black bg-opacity-70 py-3 w-20 focus:invert">hoho</button>
+          </div>
           </ul>
         </div>
-        <a href="https://mars.nasa.gov/msl/home/" class="my-auto">
-          <img
-            src="/NASA_logo.svg.png"
-            id="myimage"
-            alt=""
-            class="sm:h-[100px] h-[50px] m-auto"
-          />
-        </a>
+       
         
-        <div class="sm:flex sm:flex-row sm:gap-2">
-          <h1 class="text-center sm:text-4xl my-auto">Mars</h1>
-          <h3 class="text-center sm:text-4xl my-auto text-orange-400">
+        <div class="sm:flex sm:flex-row sm:gap-2 pl-4">
+          <h1 class="text-center my-auto text-2xl">Mars</h1>
+          <h3 class="text-center my-auto text-orange-400 text-4xl">
             Curiosity
           </h3>
-          <h3 class="text-center sm:text-4xl my-auto">Rover</h3>
+          <h3 class="text-center my-auto text-2xl">Rover</h3>
         </div>
       </div>
      
-      <div class="flex flex-row sm:gap-4">
+      <div class="flex sm:gap-4 pr-20">
        
         <input
           type="date"
           id="date-input"
-          class="text-xl bg-transparent rounded-md sm:text-2xl my-auto"
+          class="text-xl bg-transparent rounded-md my-auto"
         />
         <p
           id="sol"
-          class="hidden sm:block sm:text-2xl my-auto text-blue-700"
+          class="hidden sm:block my-auto"
         ></p>
-        <p
-          id="counter"
-          class="text-sm p-2 sm:text-2xl my-auto text-orange-600"
-        ></p>
+        <a href="https://mars.nasa.gov/msl/home/" class="my-auto">
+          <img
+            src="/NASA_logo.svg.png"
+            id="myimage"
+        
+            class="sm:h-[80px]"
+          />
+        </a>
       </div>
-      <div class="flex my-auto gap-6">
-        <button id="gps" class="flex items-center justify-center w-1/6">
-          <img src="/nav.svg" alt="" class="w-full h-auto">
-        </button>
-        <button id="magnify" class="flex items-center justify-center w-1/6">
-          <img src="/mag.svg" alt="" class="w-full h-auto">
-        </button>
-        <button id="weather" class="flex items-center justify-center w-1/6" >
-      <img src="/weather.svg" alt="" class="w-full h-auto">
-        </button>
-      </div>
+      
     </div>
     <iframe
       src="https://mars.nasa.gov/maps/location/?mission=MSL&site=NOW"
-      frameborder="0"
+      
       id="frame"
     ></iframe>
     <div

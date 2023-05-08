@@ -10,18 +10,24 @@ body {
 .menu {
   position: relative;
 }
-
+.buttonExtension {
+  visibility: hidden;
+}
+.div1:hover .buttonExtension {
+  visibility: visible;
+}
+.div2:hover .buttonExtension {
+  visibility: visible;
+}
+.div3:hover .buttonExtension {
+  visibility: visible;
+}
 .sub-menu {
-  visibility: hidden; /* hides sub-menu */
+  visibility: hidden;
   opacity: 0;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
-  transform: translateY(-2em);
-  z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
-    z-index 0s linear 0.01s;
 }
 
 .menu:focus .sub-menu,
@@ -29,29 +35,30 @@ body {
 .menu:hover .sub-menu {
   visibility: visible;
   opacity: 1;
-  z-index: 1;
+  z-index: 4;
   transform: translateY(0%);
-  transition-delay: 0.2s;
 }
 
 /* end of dropdown menu */
 #frame {
-  height: 88%;
   visibility: hidden;
   position: fixed;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 70vh;
   border-radius: 20px;
-  width: 90vw;
+  overflow: -moz-hidden-unscrollable;
+  z-index: 2;
+  height: 60%;
+  width: 50%;
+  backdrop-filter: blur(10px);
 }
 
 #image-container img {
   max-width: 18%;
   object-fit: cover;
   transition: transform 0.1s ease-in-out;
-  margin: 10px auto 10px auto;
+  margin: 1% auto 1% auto;
   border-radius: 10px;
   cursor: -moz-zoom-in;
   cursor: -webkit-zoom-in;
@@ -70,48 +77,12 @@ body {
   height: 90dvh;
   max-width: 100vw;
   max-height: 100vh;
-  transform: scale(1);
   object-fit: contain;
   cursor: -moz-zoom-out;
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 
-/* ---------------------------- */
-
-.handle {
-  position: fixed;
-  background: var(--handle-background);
-}
-
-.magnifying-glass {
-  border-radius: 50%;
-  position: absolute;
-  height: var(--size);
-  width: var(--size);
-  overflow: hidden;
-  border: 1px solid black;
-  box-shadow: 0px 0px 20px black;
-}
-
-.body-clone {
-  position: absolute;
-
-  height: 100dvh;
-  width: 100dvw;
-  transform: scale(var(--scale));
-  overflow: hidden;
-  cursor: none;
-}
-#location {
-  visibility: hidden;
-}
-#nasaWeather {
-  visibility: hidden;
-  margin-left: auto;
-  scale: 1.5;
-}
-/* ------------------------------- */
 @media screen and (max-width: 600px) {
   #image-container img:hover {
     transform: scale(1.1);
