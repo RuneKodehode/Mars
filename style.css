@@ -6,9 +6,9 @@ body {
   font-family: "oswald";
   width: screen;
 }
-/* #equipment {
+#equipment {
   visibility: hidden;
-} */
+}
 
 /* dropdown menu */
 .menu {
